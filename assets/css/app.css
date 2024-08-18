@@ -1,0 +1,98 @@
+
+:root {
+  /* colors */
+  --primary : #eeeee4 ; 
+  /* --primary : #eeee72 ;  */
+  --primary-700 : #eeee72 ; 
+  --dark : #020202;
+
+  /* font size */
+  --fontSize10px: calc(6px + 0.25vw);
+  --fontSize12px: calc(8px + 0.3vw);
+  --fontSize14px: calc(8px + 0.31vw);
+  --fontSize15px: calc(8px + 0.35vw);
+  --fontSize16px: calc(9px + 0.35vw);
+  --fontSize18px: calc(11px + 0.35vw);
+  --fontSize20px: calc(13px + 0.35vw);
+  --fontSize22px: calc(11px + 0.75vw);
+  --fontSize24px: calc(16px + 0.35vw);
+  --fontSize25px: calc(17px + 0.35vw);
+  --fontSize28px: calc(17px + 0.45vw);
+  --fontSize30px: calc(19px + 0.9vw);
+  --fontSize33px: calc(18px + 1vw);
+  --fontSize36px: calc(18px + 1.5vw);
+}
+
+@media (max-width: 1200px)and (min-width: 900px) {
+  :root{
+   
+    --fontSize20px: calc(11px + 0.35vw);
+    --fontSize22px: calc(11px + 0.6vw);
+    --fontSize24px: calc(13px + 0.35vw);
+    --fontSize25px: calc(14px + 0.35vw);
+    --fontSize28px: calc(15px + 0.4vw);
+    --fontSize30px: calc(16px + 0.7vw);
+    --fontSize33px: calc(17px + 1vw);
+    --fontSize36px: calc(18px + 1.2vw);
+  }
+}
+@media (max-width: 900px) {
+  :root{
+    --fontSize30px: calc(14px + 0.7vw);
+   
+    --fontSize14px: calc(8.5px + 0.31vw);
+    --fontSize15px: calc(9px + 0.35vw);
+    --fontSize16px: calc(10px + 0.37vw);
+  }
+}
+
+@font-face {
+  font-family: 'Dubai';
+  src: url('@/assets/fonts/Dubai-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dubai';
+  src: url('@/assets/fonts/Dubai-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dubai';
+  src: url('@/assets/fonts/Dubai-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dubai';
+  src: url('@/assets/fonts/Dubai-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+*{
+  font-family: 'Dubai', sans-serif;
+  font-weight: 300;
+}
+.text-bold {
+  font-family: 'Dubai', sans-serif;
+  font-weight: 700;
+}
+
+.text-light {
+  font-family: 'Dubai', sans-serif;
+  font-weight: 300;
+}
+
+.text-medium {
+  font-family: 'Dubai', sans-serif;
+  font-weight: 500;
+}
+
+.text-regular {
+  font-family: 'Dubai', sans-serif;
+  font-weight: 400;
+}

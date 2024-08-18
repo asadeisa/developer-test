@@ -1,0 +1,132 @@
+.category-page {
+  .product-wrapper {
+    gap: 3vw;
+  }
+  .card {
+    width: calc(200px + 7vw);
+    transition: transform 0.3s ease-in;
+  }
+  .card:hover {
+    transform: translateY(-3%);
+  }
+  @media (max-width: 850px) {
+    .product-wrapper {
+      justify-content: center;
+    }
+    .card {
+      width: calc(140px + 7vw);
+      min-width: 170px;
+    }
+  }
+  @media (max-width: 374px) {
+    .product-wrapper {
+      gap: 0.5rem;
+    }
+    .product-wrapper > div {
+      width: 48%;
+    }
+    .card {
+      width: 100%;
+      min-width: unset;
+      height: calc(200px + 6vw);
+      .text-16 {
+        font-size: 10px;
+        margin-bottom: 0.5rem;
+      }
+      .card-image {
+        height: calc(220px + 5vw);
+      }
+    }
+  }
+}
+// product page :
+.product-page-section {
+  .product-details {
+    justify-content: space-between;
+  }
+  .product-image {
+    width: calc(350px + 7vw);
+    height: calc(450px + 7vw);
+  }
+  .right-side {
+    width: calc(100% - 350px - 8vw - 1rem);
+  }
+}
+@media (max-width: 1010px) {
+  .product-page-section {
+    .product-details {
+      justify-content: space-between;
+    }
+    .product-image {
+      width: calc(221px + 7vw);
+      height: calc(276px + 7vw);
+    }
+    .right-side {
+      width: calc(100% - 230px - 6vw - 1rem);
+    }
+  }
+}
+@media (max-width: 560px) {
+  .product-page-section {
+    .product-details {
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .product-image {
+      width: calc(100px + 15vw);
+      height: calc(196px + 5vw);
+    }
+    .right-side {
+      width: calc(100% - 100px - 15vw);
+    }
+    .star-and-b{
+      // flex-direction: column;
+    }
+    .text-25 {
+      font-size: calc(11px + 0.5vw);
+    }
+    .text-18 {
+      font-size: 9px;
+    }
+    .text-22 {
+      font-size: 11px;
+    }
+    button img {
+      width: 15px;
+      height: 15px;
+    }
+    .budget {
+      
+      padding: .1rem .2rem;
+      
+    }
+    .px-2{
+      padding: 0 .2rem !important;
+    }
+    .vue-star-rating-star {
+      width: 15px;
+      height: 15px;
+    }
+    .vue-star-rating {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.cart-page{
+
+tr *{
+  font-size: inherit;
+}
+@media (max-width:527px) {
+  .form-control {
+    max-width: 3.2rem;
+    padding: .3rem .15rem;
+    text-align: center;
+  }
+  .text-17 {
+    font-size: calc(9px + .3vw);
+  }
+}
+}
