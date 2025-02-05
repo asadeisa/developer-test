@@ -38,7 +38,15 @@ const HomeBreakPoints = {
           </div>
         </template>
       </SharedCustomSlider>
+
       <div class="padding-div-1"></div>
+      <template #placeholder>
+        <div >
+          <NuxtImg  :src="images[0]" width="100vw" height="684"  />
+        </div>
+        <div class="padding-div-1"></div>
+
+      </template>
     </ClientOnly>
     <div class="all-page-image cover">
       <NuxtImg src="/assets/images/Jewelry.jpg" width="1500" height="620" loading="lazy" />
@@ -53,8 +61,8 @@ const HomeBreakPoints = {
       </div>
     </div>
     <DelayHydration>
-    <BodyContent />
-      
+      <BodyContent />
+
     </DelayHydration>
   </div>
 </template>

@@ -46,7 +46,9 @@ const user = useCookie(
     <NuxtLayout>
       <NuxtPage></NuxtPage>
     </NuxtLayout>
-    <FooterApp/>
+    <DelayHydration>
+      <FooterApp/>
+    </DelayHydration>
     
   </div>
 </template>
