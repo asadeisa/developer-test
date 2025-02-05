@@ -16,7 +16,7 @@ const showSmSearch = ref(false);
         <nav class="navbar pt-0  navbar-light w-100 align-items-end justify-content-between">
           <div class="logo cover">
             <NuxtLink  to="/">
-              <NuxtImg width="150" height="140" src="/assets/icons/logo-black.png" preload alt="logo" />
+              <NuxtImg width="150" height="140" src="/assets/icons/logo-black.webp" preload alt="logo" />
 
             </NuxtLink>
           </div>

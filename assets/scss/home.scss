@@ -1,3 +1,13 @@
+.image-place-holder{
+  width: 100%;
+  display: block;
+  @media (max-width:700px) and (min-width:400px) {
+    height: calc(130px + 26vw);
+  }
+  @media (max-width:400px) {
+    height: calc(130px + 5vw);
+  }
+}
 .move-caption-left{
   color: var(--dark);
   right: unset;
@@ -37,6 +47,9 @@
     button{
       padding: calc(.3rem + .3vw)  calc(.4rem + .9vw) ;
     }
+  }
+  @media (max-width:850px) {
+    margin-top: .75rem;
   }
 }
 .offers{

@@ -1,6 +1,6 @@
 <script setup>
 
-const images = ["/assets/images/Header.jpg", "/assets/images/Header.jpg", "/assets/images/Header.jpg"]
+const images = ["/assets/images/Header.webp", "/assets/images/Header.webp", "/assets/images/Header.webp"]
 
 useHead({
   link: images.map((src) => ({
@@ -42,14 +42,14 @@ const HomeBreakPoints = {
       <div class="padding-div-1"></div>
       <template #placeholder>
         <div >
-          <NuxtImg  :src="images[0]" width="100vw" height="684"  />
+          <NuxtImg class="image-place-holder"  :src="images[0]" width="100vw" height="684"  />
         </div>
         <div class="padding-div-1"></div>
 
       </template>
     </ClientOnly>
     <div class="all-page-image cover">
-      <NuxtImg src="/assets/images/Jewelry.jpg" width="1500" height="620" loading="lazy" />
+      <NuxtImg src="/assets/images/Jewelry.webp" width="1500" height="620" loading="lazy" />
       <div class="button-all-page-image ">
         <button class="btn btn-light d-flex  align-items-center gap-3 ">
           <span class="text-18 text-uppercase  text-medium"> see more</span>
