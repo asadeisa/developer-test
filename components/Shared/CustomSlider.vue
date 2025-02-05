@@ -33,7 +33,7 @@ const settings = ref({
 </script>
 <template>
   <Carousel :autoplay="props.autoplay" v-bind="settings" :breakpoints="props.breakpoints" :wrap-around="props.wrapAround">
-    <Slide v-for="slide in products" :key="slide.id||Math.random()">
+    <Slide v-for="(slide ,index) in products" :key="slide.id||index">
       <div class="carousel__item">
         <slot v-bind:slide="slide"></slot>
 

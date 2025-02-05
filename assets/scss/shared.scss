@@ -157,6 +157,14 @@ width: 100%;
   padding: calc(.2rem + .1vw) calc(.4rem + .9vw);
   font-size: var(--fontSize18px);
 }
+.carousel__pagination{
+  padding: 1rem 0 !important;
+  margin-top: .5rem !important;
+  bottom: -35px;
+}
+.carousel__pagination-button{
+height: 3px;
+}
 .carousel__pagination-button::after {
   --vc-pgn-width : 16px ; 
   --vc-pgn-height: 2px
