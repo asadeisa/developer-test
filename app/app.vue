@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 
 useHead({
   title: 'test app',
@@ -7,7 +7,7 @@ useHead({
   ],
 
   htmlAttrs: {
-    lang: `en`,
+    lang: `en`
     // class: 'dark1'
   },
 
@@ -21,16 +21,16 @@ useHead({
 
   ],
   script: [
-        {
-          src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js',
-          integrity: 'sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM',
-          crossorigin: 'anonymous',
-          defer: true, // This adds the defer attribute
-        },
-      ],
+    {
+      src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js',
+      integrity: 'sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM',
+      crossorigin: 'anonymous',
+      defer: true // This adds the defer attribute
+    }
+  ]
 })
 
-const user = useCookie(
+useCookie(
   'userInfo',
   {
     default: () => ({ id: 5 }),

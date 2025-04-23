@@ -1,15 +1,17 @@
-<script setup>
-const props = defineProps({
-  product: { default: () => { } },
-  showOldPrice: { default: true }
-})
-function clipTitle(text) {
+<script setup lang="ts">
+import type { Product } from '~/types'
+
+const props = defineProps<{
+  product: Product,
+  showOldPrice: boolean
+}>()
+function clipTitle(text:string):string {
   let arrayTitle = text.split('')
   let result = text
   if (arrayTitle.length > 30) {
-    arrayTitle = arrayTitle.slice(0, 30);
-    arrayTitle.push(...[".", ".", "."]);
-    result = arrayTitle.join('');
+    arrayTitle = arrayTitle.slice(0, 30)
+    arrayTitle.push(...[".", ".", "."])
+    result = arrayTitle.join('')
   }
   return result
 }
@@ -27,7 +29,8 @@ function clipTitle(text) {
       <p class="text-center text-regular text-16 ">
         {{ clipTitle(props.product.title) }}
       </p>
-      <p class="text-center text-medium text-16 d-flex  gap-2 "
+      <p 
+      class="text-center text-medium text-16 d-flex  gap-2 "
         :class="props.showOldPrice ? 'justify-content-center' : 'justify-content-start'">
         <span class="text-medium">ADE</span>
         <span v-if="props.showOldPrice" class="old-price text-medium">1000</span>

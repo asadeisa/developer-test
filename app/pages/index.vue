@@ -1,27 +1,30 @@
-<script setup>
+<script setup lang="ts">
+import type { BreakpointsType } from '~/types/slider'
 
-const images = ["/assets/images/Header.webp", "/assets/images/Header.webp", "/assets/images/Header.webp"]
+
+const images = ['/assets/images/Header.webp', '/assets/images/Header.webp', '/assets/images/Header.webp']
 
 useHead({
   link: images.map((src) => ({
-    rel: "preload",
-    as: "image",
+    rel: 'preload',
+    as: 'image',
     href: src
   }))
-});
-const HomeBreakPoints = {
+})
+const HomeBreakPoints :BreakpointsType = {
   1900: {
     itemsToShow: 1,
-    snapAlign: 'start',
-  },
+    snapAlign: 'start'
+  }
 }
 </script>
 <template>
   <div class="home-page wrapper">
     <ClientOnly>
-      <SharedCustomSlider class="slider-from-home" :products="images" :breakpoints="HomeBreakPoints"
-        :showNavigation="false" :wrap-around="true" :autoplay="false">
-        <template v-slot="{ slide }">
+      <SharedCustomSlider 
+      class="slider-from-home" :products="images" :breakpoints="HomeBreakPoints"
+        :show-navigation="false" :wrap-around="true" :autoplay="false" >
+        <template #default="{ slide }">
           <NuxtImg :src="slide" class="d-block w-100" alt="..." />
           <div class="carousel-caption move-caption-left d-none-sm">
             <h2 class="text-uppercase text-31">SALE</h2>

@@ -1,76 +1,77 @@
-<script setup>
-import http from '~/utilities/http';
+<script setup lang="ts">
+import type { BreakpointsType } from '~/types/slider'
+import http from '~/utilities/http'
 
-const { data: offers } = http(`products?limit=10`, { lazy: true, deep: false })
-const { data: newArrival } = http(`products/category/women's clothing?limit=10`, { lazy: true, deep: false })
+const { data: offers } = http<any>(`products?limit=10`, { lazy: true, deep: false })
+const { data: newArrival } = http<any>(`products/category/women's clothing?limit=10`, { lazy: true, deep: false })
 
-const ArrivalBreakPoints = {
+const ArrivalBreakPoints:BreakpointsType = {
   350: {
     itemsToShow: 1.8,
-    snapAlign: 'center',
+    snapAlign: 'center'
   },
   450: {
     itemsToShow: 2.2,
-    snapAlign: 'center',
+    snapAlign: 'center'
   },
   550: {
     itemsToShow: 2.7,
-    snapAlign: 'center',
+    snapAlign: 'center'
   },
   750: {
     itemsToShow: 3.2,
-    snapAlign: 'start',
+    snapAlign: 'start'
   },
   1000: {
     itemsToShow: 3.6,
-    snapAlign: 'start',
+    snapAlign: 'start'
   },
   1440: {
     itemsToShow: 4,
-    snapAlign: 'start',
+    snapAlign: 'start'
   },
   1500: {
     itemsToShow: 4.3,
-    snapAlign: 'start',
-  },
+    snapAlign: 'start'
+  }
 }
-const offersBreakPoints = {
+const offersBreakPoints:BreakpointsType = {
   350: {
     itemsToShow: 1.8,
-    snapAlign: 'center',
+    snapAlign: 'center'
   },
   420: {
     itemsToShow: 2.1,
-    snapAlign: 'center',
+    snapAlign: 'center'
   },
   550: {
     itemsToShow: 2.6,
-    snapAlign: 'center',
+    snapAlign: 'center'
   },
   600: {
     itemsToShow: 3.1,
-    snapAlign: 'center',
+    snapAlign: 'center'
   },
   850: {
     itemsToShow: 3.3,
-    snapAlign: 'center',
+    snapAlign: 'center'
   },
   1024: {
     itemsToShow: 3.5,
-    snapAlign: 'start',
+    snapAlign: 'start'
   },
   1300: {
     itemsToShow: 4,
-    snapAlign: 'start',
+    snapAlign: 'start'
   },
   1440: {
     itemsToShow: 5.5,
-    snapAlign: 'start',
+    snapAlign: 'start'
   },
   1500: {
     itemsToShow: 5,
-    snapAlign: 'start',
-  },
+    snapAlign: 'start'
+  }
 }
 </script>
 <template>
@@ -78,8 +79,8 @@ const offersBreakPoints = {
         <h3 class="text-uppercase text-30 mb-3 text-bold">special offers</h3>
         <ClientOnly>
           <SharedCustomSlider :products="offers" :breakpoints="offersBreakPoints">
-            <template v-slot="{ slide }">
-              <SharedCard :product="slide" />
+            <template #default="{ slide }">
+              <SharedCard :product="slide" :show-old-price="true" />
 
             </template>
 
@@ -93,8 +94,8 @@ const offersBreakPoints = {
     <section class="offers container-fluid">
         <h3 class="text-uppercase text-30 mb-3 text-bold">new Arrival</h3>
         <ClientOnly>
-          <SharedCustomSlider :products="newArrival" :breakpoints="ArrivalBreakPoints" :showNavigation="false">
-            <template v-slot="{ slide }">
+          <SharedCustomSlider :products="newArrival" :breakpoints="ArrivalBreakPoints" :show-navigation="false">
+            <template #default="{ slide }">
   
               <SharedCard :product="slide" :show-old-price="false" />
             </template>

@@ -1,8 +1,10 @@
-<script setup>
-import http from '~/utilities/http';
+<script setup lang="ts">
 
-const {name } = useRoute().params ; 
-const {data:products} = await http(`products/category/${name}`)
+import type { Product } from '~/types'
+import http from '~/utilities/http'
+
+const {name } = useRoute().params 
+const {data:products} = await http<Product[]>(`products/category/${name}`)
 </script>
 <template>
   <div class="container-fluid category-page">
@@ -12,8 +14,8 @@ const {data:products} = await http(`products/category/${name}`)
     <div class="padding-div-1"></div>
 
     <div class="d-flex flex-wrap product-wrapper">
-      <div   v-for="product in products" :key="product.id">
-        <SharedCard  :product="product"></SharedCard>
+      <div   v-for="product  in products" :key="product.id">
+        <SharedCard  :product="product" :show-old-price="true" />
       </div>
 
     </div>
