@@ -1,11 +1,9 @@
-
 :root {
   /* colors */
   --primary : #eeeee4 ; 
   /* --primary : #eeee72 ;  */
   --primary-700 : #eeee72 ; 
   --dark : #020202;
-
   /* font size */
   --fontSize10px: calc(6px + 0.25vw);
   --fontSize12px: calc(8px + 0.3vw);

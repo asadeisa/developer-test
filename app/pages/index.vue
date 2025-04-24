@@ -23,7 +23,7 @@ const HomeBreakPoints :BreakpointsType = {
     <ClientOnly>
       <SharedCustomSlider 
       class="slider-from-home" :products="images" :breakpoints="HomeBreakPoints"
-        :show-navigation="false" :wrap-around="true" :autoplay="false" >
+        :show-navigation="false" :wrap-around="true" :autoplay="false" :show-pagination="false" >
         <template #default="{ slide }">
           <NuxtImg :src="slide" class="d-block w-100" alt="..." />
           <div class="carousel-caption move-caption-left d-none-sm">
@@ -66,6 +66,6 @@ const HomeBreakPoints :BreakpointsType = {
     <DelayHydration>
       <BodyContent />
 
-    </DelayHydration>
-  </div>
+    </DelayHydration>  
+    </div>
 </template>

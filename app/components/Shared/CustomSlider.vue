@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
   showPagination: true,
   showNavigation: true,
   wrapAround: false,
-  autoplay: 0
+  autoplay: false
 })
 // Define the settings and breakpoints using `ref` since they are reactive
 const settings = ref({
@@ -32,7 +32,7 @@ const settings = ref({
   <Carousel :autoplay="props.autoplay" v-bind="settings" :breakpoints="props.breakpoints" :wrap-around="props.wrapAround">
     <Slide v-for="(slide ,index) in products" :key="slide.id||index">
       <div class="carousel__item">
-        <slot :slide="slide" />
+        <slot :slide="slide" ></slot>
 
       </div>
     </Slide>

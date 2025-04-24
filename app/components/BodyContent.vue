@@ -78,7 +78,7 @@ const offersBreakPoints:BreakpointsType = {
   <section class="offers container-fluid">
         <h3 class="text-uppercase text-30 mb-3 text-bold">special offers</h3>
         <ClientOnly>
-          <SharedCustomSlider :products="offers" :breakpoints="offersBreakPoints">
+          <SharedCustomSlider :products="offers" :breakpoints="offersBreakPoints" :show-pagination="false" :autoplay="false" :show-navigation="false" :wrap-around="false">
             <template #default="{ slide }">
               <SharedCard :product="slide" :show-old-price="true" />
 
@@ -94,7 +94,7 @@ const offersBreakPoints:BreakpointsType = {
     <section class="offers container-fluid">
         <h3 class="text-uppercase text-30 mb-3 text-bold">new Arrival</h3>
         <ClientOnly>
-          <SharedCustomSlider :products="newArrival" :breakpoints="ArrivalBreakPoints" :show-navigation="false">
+          <SharedCustomSlider :products="newArrival" :breakpoints="ArrivalBreakPoints" :show-navigation="false" :show-pagination="false" :wrap-around="false" :autoplay="false">
             <template #default="{ slide }">
   
               <SharedCard :product="slide" :show-old-price="false" />
