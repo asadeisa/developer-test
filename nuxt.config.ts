@@ -33,5 +33,8 @@ export default defineNuxtConfig({
     twicpics: {
       baseURL: ""
     }
+  },
+  nitro: {
+    preset: "netlify"
   }
 })
