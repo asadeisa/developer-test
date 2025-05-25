@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
   showPagination: true,
   showNavigation: true,
   wrapAround: false,
-  autoplay: false
+  autoplay: 1
 })
 // Define the settings and breakpoints using `ref` since they are reactive
 const settings = ref({
