@@ -2,13 +2,14 @@
 import { fileURLToPath, URL } from "node:url"
 
 export default defineNuxtConfig({
-  compatibilityDate: "2025-03-03",
+  compatibilityDate: "2025-06-03",
   devtools: { enabled: true },
   modules: [
-    "nuxt-delay-hydration",
+    
     "@nuxt/image",
     "vue3-carousel-nuxt",
-    "@nuxt/eslint"
+    "@nuxt/eslint",
+    "@nuxt/fonts"
   ],
   css: ["~/assets/css/app.css", "~/assets/scss/app.scss"],
   future: {
@@ -24,9 +25,7 @@ export default defineNuxtConfig({
       sourcemap: true
     }
   },
-  delayHydration: {
-    mode: "init" //   'mount' or "manual"
-  },
+ 
   image: {
     format: ["webp"],
     provider: "twicpics",
@@ -34,7 +33,7 @@ export default defineNuxtConfig({
       baseURL: ""
     }
   },
-  nitro: {
-    preset: "netlify"
+ app: {
+    prefetchLinks: false
   }
 })

@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import type { CartItem } from '~/types'
-import http from '~/utilities/http'
-
+import type { CartItem } from "~/types"
+import http from "~/utilities/http"
 const cartItems = ref<CartItem[]>()
 
-const { data: cartData } = await http<CartItem[]>('carts/1', {
-  server : true , 
-  transform: async (data :any) => {
-    const response = await fetch('https://fakestoreapi.com/products')
+const { data: cartData } = await http<CartItem[]>("carts/1", {
+  server: true,
+  transform: async (data: any) => {
+    const response = await fetch("https://fakestoreapi.com/products")
     const products = await response.json()
 
-    return data.products.map(cartItem  => {
-      const product = products.find(p => p.id === cartItem.productId)
+    return data.products.map((cartItem) => {
+      const product = products.find((p) => p.id === cartItem.productId)
       return {
         id: product.id,
         title: product.title,
@@ -24,19 +23,22 @@ const { data: cartData } = await http<CartItem[]>('carts/1', {
 
 cartItems.value = cartData.value
 
-const updateQuantity = (id:string|number, quantity:number) => {
-  const item = cartItems.value?.find(item => item.id === id)
+const updateQuantity = (id: string | number, quantity: number) => {
+  const item = cartItems.value?.find((item) => item.id === id)
   if (item) {
     item.quantity = quantity > 0 ? quantity : 1
   }
 }
 
-const removeItem = (id:string|number) => {
-  cartItems.value = cartItems.value?.filter(item => item.id !== id)
+const removeItem = (id: string | number) => {
+  cartItems.value = cartItems.value?.filter((item) => item.id !== id)
 }
 
 const cartTotal = computed(() => {
-  return cartItems.value?.reduce((total, item) => total + item.price * item.quantity, 0)
+  return cartItems.value?.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  )
 })
 </script>
 <template>
@@ -59,8 +61,8 @@ const cartTotal = computed(() => {
           <td>${{ item.price.toFixed(2) }}</td>
           <td>
             <input
-            type="number"
-             @change="updateQuantity(Number(item.id),Number(item.quantity) )"
+              type="number"
+              @change="updateQuantity(Number(item.id), Number(item.quantity))"
               v-model.number="item.quantity"
               class="form-control text-17"
               min="1"
@@ -68,9 +70,9 @@ const cartTotal = computed(() => {
           </td>
           <td>${{ (item.price * item.quantity).toFixed(2) }}</td>
           <td>
-            <button 
-            @click="removeItem(item.id)" 
-            class="btn btn-danger text-17">Delete</button>
+            <button @click="removeItem(item.id)" class="btn btn-danger text-17">
+              Delete
+            </button>
           </td>
         </tr>
       </tbody>
@@ -83,5 +85,3 @@ const cartTotal = computed(() => {
     </div>
   </div>
 </template>
-
-
